@@ -56,8 +56,19 @@ app.listen(port, () => {
 
 /* Connect to local mongoDB instance */
 // Connection URL
-const url = `mongodb://${process.env.LOCAL_MONGO_USERNAME}:${process.env.LOCAL_MONGO_PASSWORD}@localhost:27017/myNewDb?authSource=admin`;
+// const url = `mongodb://${process.env.LOCAL_MONGO_USERNAME}:${process.env.LOCAL_MONGO_PASSWORD}@localhost:27017/myNewDb?authSource=admin`;
 // Use connect method to connect to the Server
+// mongoose.connect(url, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// })
+//   .catch((error) => {
+//     console.log('error: ', error);
+//   });
+
+/* Connect to mLab database */
+// Connection URL
+const url = `mongodb://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_URL}`;
 mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -65,12 +76,6 @@ mongoose.connect(url, {
   .catch((error) => {
     console.log('error: ', error);
   });
-
-/* Connect to mLab database */
-// mongoose.connect(`mongodb://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_URL}`, {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true
-// });
 
 
 var db = mongoose.connection;
