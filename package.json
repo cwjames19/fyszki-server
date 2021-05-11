@@ -27,7 +27,7 @@
     "graphql-resolvers": "0.3.3",
     "graphql-tools": "4.0.6",
     "jsonwebtoken": "8.5.1",
-    "lodash": "4.17.15",
+    "lodash": "4.17.21",
     "mongodb": "3.3.4",
     "mongoose": "5.7.8"
   },
